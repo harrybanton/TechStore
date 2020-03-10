@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class forgotPasswordController {
+public class forgotPwordController {
 
     @FXML AnchorPane forgotPasswordPane;
 

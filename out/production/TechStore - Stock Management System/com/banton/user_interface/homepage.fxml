@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="homepagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.banton.user_interface.homepageController">
+   <children>
+      <MenuButton layoutX="768.0" layoutY="33.0" mnemonicParsing="false" text="Settings">
+        <items>
+          <MenuItem mnemonicParsing="false" text="My Details" />
+          <MenuItem fx:id="buttonLogout" mnemonicParsing="false" onAction="#logout" text="Logout" />
+        </items>
+      </MenuButton>
+      <TableView layoutX="32.0" layoutY="88.0" prefHeight="292.0" prefWidth="834.0">
+        <columns>
+          <TableColumn editable="false" prefWidth="89.0" resizable="false" sortable="false" text="Select" />
+          <TableColumn prefWidth="90.99998474121094" text="Product ID" />
+            <TableColumn prefWidth="308.99998474121094" text="Product Name" />
+            <TableColumn prefWidth="150.0" text="Product Type" />
+            <TableColumn prefWidth="98.0" text="Price" />
+            <TableColumn prefWidth="96.0" text="Stock Level" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

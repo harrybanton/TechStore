@@ -51,7 +51,7 @@ public class loginController {
     public void forgotPassword(){
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("forgotPassword.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("forgotPword.fxml"));
             Stage primaryStage = (Stage) loginPane.getScene().getWindow();
             primaryStage.setTitle("Forgot My Password");
             primaryStage.setScene(new Scene(root));
@@ -67,7 +67,7 @@ public class loginController {
     public void registerAccount(){
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("forgotPassword.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("forgotPword.fxml"));
             Stage primaryStage = (Stage) loginPane.getScene().getWindow();
             primaryStage.setTitle("Register");
             primaryStage.setScene(new Scene(root));
