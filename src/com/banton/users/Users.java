@@ -1,4 +1,4 @@
-package com.banton.techstore.users;
+package com.banton.users;
 
 public class Users {
 

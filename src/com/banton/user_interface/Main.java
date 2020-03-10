@@ -1,4 +1,4 @@
-package com.banton.techstore.user_interface;
+package com.banton.user_interface;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

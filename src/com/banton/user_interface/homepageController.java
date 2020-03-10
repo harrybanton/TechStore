@@ -1,4 +1,4 @@
-package com.banton.techstore.user_interface;
+package com.banton.user_interface;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,15 +9,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class forgotPasswordController {
+public class homepageController {
 
-    @FXML AnchorPane forgotPasswordPane;
+    @FXML AnchorPane homepagePane;
 
-    public void backToLogin(){
+    //user clicks logout button
+    public void logout(){
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-            Stage primaryStage = (Stage) forgotPasswordPane.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Stage primaryStage = (Stage) homepagePane.getScene().getWindow();
             primaryStage.setTitle("Login");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
@@ -26,4 +27,7 @@ public class forgotPasswordController {
             e.printStackTrace();
         }
     }
+
+
+
 }

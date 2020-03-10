@@ -1,7 +1,6 @@
-package com.banton.techstore.user_interface;
+package com.banton.user_interface;
 
 
-import com.banton.techstore.users.Users;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
