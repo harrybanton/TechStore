@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="forgotPasswordPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="900.0" style="-fx-background-color: #3f3f3f;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.banton.GUI.registerController">
+   <children>
+      <ImageView fitHeight="38.0" fitWidth="156.0" layoutX="23.0" layoutY="23.0" onMouseClicked="#backToLogin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/backToLogin.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Pane layoutX="243.0" layoutY="77.0" prefHeight="408.0" prefWidth="412.0" style="-fx-background-color: #4d4d4d; -fx-background-radius: 25;">
+         <children>
+            <ImageView fitHeight="34.0" fitWidth="105.0" layoutX="160.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/Register.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TextField alignment="CENTER" layoutX="34.0" layoutY="75.0" promptText="First Name" style="-fx-background-radius: 25;" />
+            <TextField alignment="CENTER" layoutX="231.0" layoutY="74.0" promptText="Surname" style="-fx-background-radius: 25;" />
+            <TextField alignment="CENTER" layoutX="132.0" layoutY="126.0" promptText="Username" style="-fx-background-radius: 25;" />
+            <TextField alignment="CENTER" layoutX="108.0" layoutY="176.0" prefHeight="25.0" prefWidth="197.0" promptText="Email Address" style="-fx-background-radius: 25;" />
+            <TextField alignment="CENTER" layoutX="132.0" layoutY="229.0" promptText="Password" style="-fx-background-radius: 25;" />
+            <TextField alignment="CENTER" layoutX="132.0" layoutY="279.0" promptText="Confirm Password" style="-fx-background-radius: 25;" />
+            <Label layoutX="134.0" layoutY="14.0" text="Registration" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font></Label>
+         </children></Pane>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
