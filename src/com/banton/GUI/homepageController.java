@@ -1,4 +1,4 @@
-package com.banton.user_interface;
+package com.banton.GUI;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

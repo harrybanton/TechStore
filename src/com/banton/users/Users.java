@@ -1,74 +1,117 @@
 package com.banton.users;
 
-public class Users {
+import javax.persistence.*;
+import java.util.Objects;
 
-    //declare variables
-    private int userID;
-    private String firstName;
+@Entity
+@Table(name = "users", schema = "techstore", catalog = "")
+public class Users {
+    private int userId;
+    private String firstname;
     private String surname;
     private String username;
-    private String email;
     private String password;
-    private Boolean isApproved;
-    private Boolean isAdmin;
+    private String email;
+    private byte isAdmin;
+    private byte isApproved;
 
-    //constructor
-    public Users(int intUserID, String strFirstName, String strSurname, String strUsername, String strEmail, String strPassword, Boolean boolIsApproved, Boolean boolIsAdmin){
-        userID = intUserID;
-        firstName = strFirstName;
-        surname = strSurname;
-        username = strUsername;
-        email = strEmail;
-        password = strPassword;
-        isApproved = boolIsApproved;
-        isAdmin = boolIsAdmin;
+    @Id
+    @Column(name = "UserID")
+    public int getUserId() {
+        return userId;
     }
 
-    //get variables
-    public String getFirstName(){
-        return firstName;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public String getSurname(){
+    @Basic
+    @Column(name = "Firstname")
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    @Basic
+    @Column(name = "Surname")
+    public String getSurname() {
         return surname;
     }
 
-    public String getUsername(){
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    @Basic
+    @Column(name = "Username")
+    public String getUsername() {
         return username;
     }
 
-    public String getEmail(){
-        return email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassword(){
+    @Basic
+    @Column(name = "Password")
+    public String getPassword() {
         return password;
     }
 
-    public Boolean getIsApproved(){
-        return isApproved;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public Boolean getIsAdmin(){
+    @Basic
+    @Column(name = "Email")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Basic
+    @Column(name = "isAdmin")
+    public byte getIsAdmin() {
         return isAdmin;
     }
 
-
-    //set variables
-    public void setEmail(String newEmail){
-        email = newEmail;
+    public void setIsAdmin(byte isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
-    public void setPassword(String newPassword){
-        password = newPassword;
+    @Basic
+    @Column(name = "isApproved")
+    public byte getIsApproved() {
+        return isApproved;
     }
 
-    public void setIsApproved(){
-        isApproved = true;
+    public void setIsApproved(byte isApproved) {
+        this.isApproved = isApproved;
     }
 
-    public void setIsAdmin(){
-        isAdmin = true;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Users that = (Users) o;
+        return userId == that.userId &&
+                isAdmin == that.isAdmin &&
+                isApproved == that.isApproved &&
+                Objects.equals(firstname, that.firstname) &&
+                Objects.equals(surname, that.surname) &&
+                Objects.equals(username, that.username) &&
+                Objects.equals(password, that.password) &&
+                Objects.equals(email, that.email);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, firstname, surname, username, password, email, isAdmin, isApproved);
+    }
 }

@@ -1,4 +1,4 @@
-package com.banton.user_interface;
+package com.banton.GUI;
 
 
 import javafx.fxml.FXML;
@@ -67,7 +67,7 @@ public class loginController {
     public void registerAccount(){
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("forgotPword.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
             Stage primaryStage = (Stage) loginPane.getScene().getWindow();
             primaryStage.setTitle("Register");
             primaryStage.setScene(new Scene(root));
