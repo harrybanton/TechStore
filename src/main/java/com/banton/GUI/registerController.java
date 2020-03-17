@@ -9,6 +9,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.jpa.HibernateQuery;
+import org.hibernate.procedure.internal.Util;
+
 
 import java.io.IOException;
 
@@ -20,7 +27,7 @@ public class registerController {
     @FXML TextField txtUsername;
     @FXML TextField txtEmail;
     @FXML PasswordField txtPassword;
-    @FXML PasswordField txtPasswordConfirm;
+    @FXML PasswordField txtConfirmPassword;
 
 
     public void backToLogin(){
@@ -38,7 +45,31 @@ public class registerController {
     }
 
     public void register(){
-        System.out.println(txtFirstname.getText());
+
+        Users user = new Users();
+        user.setFirstname(txtFirstname.getText());
+        user.setSurname(txtSurname.getText());
+        user.setUsername(txtUsername.getText());
+        user.setEmail(txtEmail.getText());
+        user.setPassword(txtPassword.getText());
+        user.setIsApproved((byte) 0);
+        user.setIsAdmin((byte) 0);
+
+        System.out.println("Post user class");
+
+
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        System.out.println("After session made");
+
+        session.beginTransaction();
+        session.save(user);
+        session.getTransaction().commit();
+
+
+        session.close();
+        sessionFactory.close();
 
 
 

@@ -1,6 +1,7 @@
 package com.banton.GUI;
 
 
+import com.banton.users.Users;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class loginController {
 
@@ -24,6 +26,9 @@ public class loginController {
 
     //Login - check credentials & move to homepage
     public void loginUser(){
+        boolean accountMatch = false;
+
+
 
         //boolean isAdmin = true;
         try{

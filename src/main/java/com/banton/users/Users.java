@@ -3,9 +3,11 @@ package com.banton.users;
 import javax.persistence.*;
 import java.util.Objects;
 
+
 @Entity
-@Table(name = "users", schema = "techstore", catalog = "")
+@Table(name = "users", schema = "techstore")
 public class Users {
+
     private int userId;
     private String firstname;
     private String surname;
@@ -14,6 +16,7 @@ public class Users {
     private String email;
     private byte isAdmin;
     private byte isApproved;
+
 
     @Id
     @Column(name = "UserID")
@@ -96,22 +99,24 @@ public class Users {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Users that = (Users) o;
-        return userId == that.userId &&
-                isAdmin == that.isAdmin &&
-                isApproved == that.isApproved &&
-                Objects.equals(firstname, that.firstname) &&
-                Objects.equals(surname, that.surname) &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(password, that.password) &&
-                Objects.equals(email, that.email);
-    }
-
-    @Override
     public int hashCode() {
         return Objects.hash(userId, firstname, surname, username, password, email, isAdmin, isApproved);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Users users = (Users) o;
+        return userId == users.userId &&
+                isAdmin == users.isAdmin &&
+                isApproved == users.isApproved &&
+                Objects.equals(firstname, users.firstname) &&
+                Objects.equals(surname, users.surname) &&
+                Objects.equals(username, users.username) &&
+                Objects.equals(password, users.password) &&
+                Objects.equals(email, users.email);
+    }
+
+
 }
